@@ -1,0 +1,88 @@
+/* Center and style the app */
+.app {
+  text-align: center;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+/* Style for the header */
+header {
+  background-color: #ff5722; /* orange background */
+  color: #ffffff;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+}
+
+/* Title text in the header */
+header h1 {
+  margin: 0;
+}
+
+/* Style for the search bar */
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+/* Input and button styles */
+input {
+  padding: 8px;
+  font-size: 16px;
+  width: 200px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+button {
+  padding: 8px 16px;
+  font-size: 16px;
+  background-color: #ff5722;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #e64a19;
+}
+
+/* Movie list grid styling */
+.movie-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 20px;
+  padding: 0 20px;
+  justify-content: center;
+}
+
+/* Movie item styling */
+.movie {
+  background-color: #ff5722;
+  color: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s;
+}
+
+.movie:hover {
+  transform: scale(1.05);
+}
+
+/* Movie image */
+.movie img {
+  width: 100%;
+  height: auto;
+}
+
+/* Movie title styling */
+.movie-title {
+  padding: 10px;
+  font-size: 16px;
+  font-weight: bold;
+}
