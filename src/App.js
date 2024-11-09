@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import Header from "./Header";
 import Movie from "./Movie";
 import "./App.css";
@@ -8,18 +8,26 @@ const App = () => {
   const [movies, setMovies] = useState([]);
   const [searchQuery, setSearchQuery] = useState("Harry-Potter");
 
-  const API_KEY = process.env.REACT_APP_OMDB_API_KEY; // Replace with your actual API key
-  const fetchMovies = async (query) => {
-    const response = await fetch(
-      `https://www.omdbapi.com/?s=${query}&apikey=${API_KEY}`
-    );
-    const data = await response.json();
-    setMovies(data.Search || []);
-  };
+  const API_KEY = process.env.REACT_APP_OMDB_API_KEY;
+
+  const fetchMovies = useCallback(
+    async (query) => {
+      try {
+        const response = await fetch(
+          `https://www.omdbapi.com/?s=${query}&apikey=${API_KEY}`
+        );
+        const data = await response.json();
+        setMovies(data.Search || []);
+      } catch (error) {
+        console.error("Failed to fetch movies:", error);
+      }
+    },
+    [API_KEY]
+  );
 
   useEffect(() => {
     fetchMovies(searchQuery);
-  }, [searchQuery]);
+  }, [fetchMovies, searchQuery]);
 
   return (
     <div className="app">
