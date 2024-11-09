@@ -5,7 +5,7 @@ const Header = ({ title, setSearchQuery }) => {
   return (
     <header>
       <div className="d-flex justify-content-between align-items-center">
-        <h1 className="h1">{title}</h1>
+        <h3 className="h3">{title}</h3>
         <Search setSearchQuery={setSearchQuery} />
       </div>
     </header>

@@ -32,7 +32,7 @@ const App = () => {
   return (
     <div className="app">
       <Header title="Assignment6H8" setSearchQuery={setSearchQuery} />
-      <h1 className="h2 text-start m-4">Show your favorite movies</h1>
+      <h1 className="h3 text-start m-4">Show your favorite movies</h1>
       <div className="movie-list">
         {movies.map((movie) => (
           <Movie key={movie.imdbID} movie={movie} />
